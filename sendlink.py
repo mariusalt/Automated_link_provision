@@ -4,14 +4,14 @@ from email.mime.text import MIMEText
 
 def sendEmail(subj, msgBody,address):
     try:
-        sender = "UMFRAGE@zew.de"
+        sender = "xx@yy.de"
         recipients = address # could be list
         body = '%s' % (msgBody)
         msg = MIMEText(body) # string to email body - ascii only
         msg['Subject'] = subj
         msg['From'] = sender
         msg['To'] = recipients
-        c = smtplib.SMTP('hermes.zew-private.de',timeout=4)
+        c = smtplib.SMTP('xx',timeout=4)
         c.sendmail(sender, [recipients], msg.as_string())
         c.quit()
     except Exception as e:
